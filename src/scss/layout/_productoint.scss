@@ -1,0 +1,34 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.titulo-servicio {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: v.$azulClaro;
+    font-family: v.$fuentePrincipal;
+}
+.servicio{  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include m.tablet{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 3rem;
+    align-items: center;
+    }
+}
+
+.servicio__contenido{
+    max-width: 100vw;
+    p{
+        margin: 2rem;
+    }
+}
+
+.contenedor-servicio{
+    margin: 2rem;
+}

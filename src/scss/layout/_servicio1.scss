@@ -1,0 +1,74 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.contenedor {
+    text-align: center;
+    padding: 2rem;
+}
+.servicio1{
+    background-color: v.$azulClaro;
+    padding: 1rem;
+    transition: transform .3s ease-in-out;
+    margin: 1rem;
+
+    &:hover {
+        transform: scale(0.9);
+    }
+}
+
+.servicio__imagen{
+    width: 100%;
+    height: 300px;
+}
+
+
+.servicio__nombre{
+    font-size: 2rem;
+}
+
+.servicio__labor{
+    font-size: 1.5rem;
+    color: v.$negro;
+    padding-top: 2rem;
+}
+
+.servicio__nombre,
+.servicio__labor{
+    font-family: v.$fuenteSecundaria;
+    font-weight: 800;
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+@include m.telefono{
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .servicio1{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@include m.tablet{
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .servicio1{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+@include m.desktop{
+    .grid {
+        grid-template-columns: repeat(3,1fr);
+        display: grid;
+        gap: 1rem;
+    }
+    .servicio1{
+        margin-left: 2rem;
+    }
+}

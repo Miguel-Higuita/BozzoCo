@@ -1,0 +1,18 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.footer {
+    width: 100%;
+    background-color: v.$azulClaro;
+    padding: 1rem;
+    
+    .footer__texto{
+        color: v.$negro;
+        text-align: center;
+    }
+    .footer__tyc{
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+}

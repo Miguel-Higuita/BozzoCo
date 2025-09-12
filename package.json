@@ -1,0 +1,29 @@
+{
+  "name": "bozzo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp dev"
+  },
+  "author": "Arteaga, Higuita, Ramirez y Villegas",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Scary322/Bozzo-web.git"
+  },
+  "keywords": [
+    "web"
+  ],
+  "bugs": {
+    "url": "https://github.com/Scary322/Bozzo-web/issues"
+  },
+  "homepage": "https://github.com/Scary322/Bozzo-web#readme",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.90.0"
+  }
+}
