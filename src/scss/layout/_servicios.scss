@@ -1,0 +1,35 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.contenedor-servicios{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 2rem;
+    margin-right: 4rem;
+}
+
+.sidebar{
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: 100%;
+}
+
+.servicios{
+    grid-column: 2;
+
+}
+
+.texto-lista{
+    text-align: center;
+    font-family: v.$fuentePrincipal;
+    position: center;
+}
+
+h2{
+    font-size: 3rem;
+    text-align: center;
+    font-family: v.$fuentePrincipal;
+}
