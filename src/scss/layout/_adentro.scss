@@ -1,0 +1,25 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+
+.nombre_persona{
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: v.$negro;
+    font-family: v.$fuentePrincipal;
+}
+.foto_persona{
+    border-radius: 50%;
+    max-width: 50rem;
+    min-width: 30rem;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+}
+.info_persona{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}

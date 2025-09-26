@@ -17,4 +17,9 @@
 
 .boton-verde {
     @include m.boton(v.$azulOscuro, inline-block);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
 }
