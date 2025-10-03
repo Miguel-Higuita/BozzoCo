@@ -56,7 +56,6 @@ a {
 }
 
 
-
 .nosotros__contenido {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -71,8 +70,8 @@ a {
     text-align: center;
     padding: 1rem;
     justify-content: center;
+    font-family: v.$fuenteSecundaria;
 }
-
 @media (min-width: 768px) {
     .grid_2 {
         display: grid;
