@@ -1,7 +1,7 @@
 <?php
 
 
-// concexion para trabajar desde UPB
+// conexion para trabajar desde UPB
 function conectarDB() {
     $db = mysqli_connect('localhost', 'root', '', 'bozzo', 3305);
 
@@ -16,7 +16,7 @@ function conectarDB() {
 }
 
 
-// concexion para trabajar desde otro sitio
+// cocexion para trabajar desde otro sitio
 // function conectarDB() {
 //     $db = mysqli_connect('localhost', 'root', '', 'bozzo');
 
