@@ -21,9 +21,7 @@ header {
             align-items: center;
         }
     }
-}
-
-h1 {
+    h1 {
     color: v.$blanco;
     text-align: center;
     font-family: v.$fuentePrincipal;
@@ -33,6 +31,9 @@ h1 {
         margin: 1rem;
     }
 }
+}
+
+
 
 .navegacion-principal {
     display: flex;

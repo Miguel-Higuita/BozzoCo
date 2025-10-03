@@ -5,6 +5,7 @@ incluirTemplates('header')
 
 <main class="contenedor-servicios">
     <div class="sidebar">
+        <h1>Hola</h1>
         <h2>Categorias</h2>
         <ul class ="texto-lista">
             <li><a href="#">Plomeria</a></li>
