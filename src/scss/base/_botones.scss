@@ -1,25 +1,31 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
-//.boton-amarillo {
-//    @include m.boton(v.$amarillo, inline-block);
-//}
+.boton-amarillo {
+   @include m.boton(v.$amarillo, inline-block);
+}
 
-//.boton-rojo-block {
-//    @include m.boton(v.$rojo, block);
-//    width: 100%;
-//}
+.boton-rojo-block {
+   @include m.boton(v.$rojo, block);
+   width: 100%;
+}
 
-//.boton-amarillo-block {
-//    @include m.boton(v.$amarillo, block);
-//}
+.boton-amarillo-block {
+   @include m.boton(v.$amarillo, block);
+}
+
+
 
 
 .boton-verde {
-    @include m.boton(v.$azulOscuro, inline-block);
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    text-align: center;
-    justify-content: center;
+    @include m.boton(v.$verde, inline-block);
 }
+
+// .boton-verde {
+//     @include m.boton(v.$azulOscuro, inline-block);
+//     width: 10rem;
+//     height: 10rem;
+//     border-radius: 50%;
+//     text-align: center;
+//     justify-content: center;
+// }

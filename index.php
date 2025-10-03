@@ -1,6 +1,6 @@
 <?php 
 require 'includes/funciones.php';
-incluirTemplates('header')
+incluirTemplate('header')
 ?>
 
     <main class="contenedor">
@@ -84,10 +84,7 @@ incluirTemplates('header')
                 <img loading="lazy" width="100%" height="100%" src="src/scss/img/logowhatsApp.png" alt="logowhatsApp">
             </picture>
         </a>
-        <div class="caja">
-            <a href="https://api.whatsapp.com/send?phone=30111 &text=Hola%20,%20Estoy%20Interesado%20por%20un%20trabajo,%20mi%20nombre%20es:%20" target="_blank">
-            <p>Asesoria gratuita</p></a>
-        </div>
+        
  
     </div>
     </main>
