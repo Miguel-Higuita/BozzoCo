@@ -5,9 +5,9 @@ require __DIR__ . '/../../includes/config/database.php';
 
 $db = conectarDB();
 
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($_POST);
+// echo "</pre>";
 
 // exit;
 // Escribir el query
@@ -30,20 +30,92 @@ $descripcion = "";
 // ejecuta el codigo despues de la verificacion 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // echo "<pre>";
-        // var_dump($_POST);
-        // echo "</pre>";
+        echo "<pre>";
+        var_dump($_POST);
+        echo "</pre>";
 
-        // echo "<pre>";
-        // var_dump($_FILES);
-        // echo "</pre>";
+    // $titulo = $_POST['usuario'];
+
+        // exit;
+
+        echo "<pre>";
+        var_dump($_FILES);
+        echo "</pre>";
 
     
 
-    $imagen = mysqli_real_escape_string($db,  $_POST['imagen']);
+    
     $servicio = mysqli_real_escape_string($db,  $_POST['servicio']);
     $usuario = mysqli_real_escape_string($db,  $_POST['usuario']);
     $descripcion = mysqli_real_escape_string($db,  $_POST['descripcion']);
+
+     //asignar file hacia una variable
+    $imagen = $_FILES['imagen'];
+    // var_dump($imagen['name']);
+
+    //validador de errores
+    if (!$servicio) {
+        $errores[] = "Debes añadir un servicio";
+    }
+
+    if (!$usuario) {
+        $errores[] = "Debes selecionar un usuario";;
+    }
+
+    if (strlen($descripcion) < 50) {
+        $errores[] = 'La descripción es obligatoria y debe tener al menos 50 caracteres';
+    }
+
+    if (!$imagen['name'] || $imagen['error']) {
+        $errores[] = 'La imagen es obligatoria';
+    }
+
+    // validar por tamaño (2 mb maximo)
+    $medida = 3000 * 1000;
+
+    if ($imagen['size'] > $medida) {
+        $errores[] = 'La Imagen es muy pesada';
+    }
+
+    if (empty($errores)) {
+
+        /** SUBIDA DE ARCHIVOS */
+
+        // Crear carpeta
+        $carpetaImagenes = '../../imagenes/';
+
+        if (!is_dir($carpetaImagenes)) {
+            mkdir($carpetaImagenes);
+        }
+
+        // Generar un nombre único
+        $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
+
+        // mover la imagen
+        move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+
+
+         // Insertar en la base de datos
+
+        $query = " INSERT INTO inicio (imagen, servicio, usuario, descripcion ) VALUES ( '$nombreImagen', '$servicio', '$usuario',  '$descripcion' ) ";
+
+        echo $query;
+
+        // $resultado = mysqli_query($db, $query);
+
+        if ($resultado) {
+            header('Location: ../index.php?resultado=1');
+        }
+
+
+        echo "<pre>";
+        var_dump($_SERVER);
+        echo "</pre>";
+    }
+
+
+
+
 
 }
 
@@ -63,7 +135,7 @@ incluirTemplate('headerAnuncio');
     <?php endforeach; ?> -->
 
         <!-- Formulario para crear un anuncio -->
-    <form class="formulario" method="post" action="/admin/anuncios/crear.php" enctype="multipart/form-data">
+    <form class="formulario" method="post" action="http://localhost/BozzoCo/admin/anuncios/crear.php" enctype="multipart/form-data">
         <fieldset>
             <legend>Información General</legend>
 
