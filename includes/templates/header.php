@@ -19,8 +19,8 @@
                 <a href="index.php">Inicio</a>
                 <a href="servicios.php">Servicios</a>
                 <a href="nosotros.php">Nosotros</a>
-                <a href="ayuda.php">Ayuda</a>
-                <button class="sesion">Iniciar sesión</button>
+                <a href="http://localhost/BozzoCo/admin/index.php" >Iniciar sesion</a>
+              
             </nav>
         </div>
     </header>
