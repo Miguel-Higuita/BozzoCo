@@ -49,12 +49,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 require __DIR__.'/../../includes/funciones.php';
-incluirTemplate('headerPropi');
+incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">
     <h1>########### Crear ###########</h1>
 
-    <a href="http://localhost:3000/admin/index.php"  class="boton boton-verde">Volver</a>
+    <a href="http://localhost/BozzoCo/admin/index.php"  class="boton boton-verde">Volver</a>
 
     <!-- <?php foreach ($errores as $error): ?>
         <div class="alerta error">

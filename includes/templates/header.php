@@ -19,7 +19,7 @@
                 <a href="index.php">Inicio</a>
                 <a href="servicios.php">Servicios</a>
                 <a href="nosotros.php">Nosotros</a>
-                <a href="http://localhost:3000/admin/index.php" >Iniciar sesion</a>
+                <a href="http://localhost/BozzoCo/admin/index.php" >Iniciar sesion</a>
               
             </nav>
         </div>

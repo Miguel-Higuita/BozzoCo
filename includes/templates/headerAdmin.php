@@ -17,7 +17,7 @@
           <img src="../../src/img/logo.png" alt="logo" />
         </div> -->
         <nav class="navegacion-principal" id="nav">
-          <a href="http://localhost:3000/admin/anuncios/crear.php">Crear</a>
+          <a href="http://localhost/BozzoCo/admin/anuncios/crear.php">Crear</a>
           <a href="#">Eliminar</a>
           <a href="http://localhost:3000/index.php">Pagina</a>
           <!-- <a href="contacto.php">Contacto</a> -->
