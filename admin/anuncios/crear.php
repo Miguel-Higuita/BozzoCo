@@ -10,12 +10,24 @@ $db = conectarDB();
 // echo "</pre>";
 
 // exit;
+
+// Consultar para obtener los servicios
+$consulta = "SELECT * FROM servicio ORDER BY nombre_servicio ASC";
+$resultado = mysqli_query($db, $consulta);
+
+// Consultar para obtener los usuarios
+$consulta2 = "SELECT * FROM usuario ORDER BY nombre ASC, apellido ASC";
+$resultado2 = mysqli_query($db, $consulta2);
+
+
+
 // Escribir el query
 $query = "SELECT * FROM inicio";
 
 
 // Consultar  la base de datos
 $resultadoConsulta = mysqli_query($db, $query);
+
 
 
 // Arreglo con mensajes de error
@@ -97,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $query = " INSERT INTO inicio (imagen, servicio, usuario, descripcion ) VALUES ( '$nombreImagen', '$servicio', '$usuario',  '$descripcion' ) ";
 
-        echo $query;
+        // echo $query;
 
         $resultado = mysqli_query($db, $query);
 
@@ -106,9 +118,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
 
-        echo "<pre>";
-        var_dump($_SERVER);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($_SERVER);
+        // echo "</pre>";
     }
 
 
@@ -141,17 +153,31 @@ incluirTemplate('headerAnuncio');
             <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
             <label for="servicio">Servicio:</label>
-            <select name="servicio">
+            <!-- <select name="servicio">
                 <option value="">----- Seleccione un servicio----</option>
                 <option value="1">electricidad</option>
                 <option value="2">vigilancia</option>
+            </select> -->
+
+            <select name="servicio">
+                <option value="">----- Seleccione un servicio -----</option>
+                <?php while ($row =  mysqli_fetch_assoc($resultado)) : ?>
+                    <option <?php echo $servicio === $row['id_servicio'] ? 'selected' : ''; ?> value="<?php echo $row['id_servicio']; ?>"> <?php echo $row['nombre_servicio'] ; ?> </option>
+                <?php endwhile; ?>
             </select>
 
             <label for="usuario">Usuario:</label>
-            <select name="usuario">
+            <!-- <select name="usuario">
                 <option value="">----- Seleccione usuario----</option>
                 <option value="1">Andres Lopez</option>
                 <option value="2">Marta Gomez</option>
+            </select> -->
+
+            <select name="usuario">
+                <option value="">----- Seleccione un usuario -----</option>
+                <?php while ($row2 =  mysqli_fetch_assoc($resultado2)) : ?>
+                    <option <?php echo $usuario === $row2['id_usuario'] ? 'selected' : ''; ?> value="<?php echo $row2['id_usuario']; ?>"> <?php echo $row2['nombre'] . " " . $row2['apellido'] ?> </option>
+                <?php endwhile; ?>
             </select>
 
             <label for="descripcion">Descripción del servicio:</label>
