@@ -138,7 +138,7 @@ incluirTemplate('headerAnuncio');
     <?php endforeach; ?> 
 
         <!-- Formulario para crear un anuncio -->
-    <form class="formulario" method="post" action="http://localhost/BozzoCo/admin/anuncios/crear.php" enctype="multipart/form-data">
+    <form class="formulario" method="post" action="crear.php" enctype="multipart/form-data">
         <fieldset>
             <legend>Información General</legend>
 
