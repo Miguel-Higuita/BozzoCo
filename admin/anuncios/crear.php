@@ -117,14 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: ../index.php?resultado=1');
         }
 
-
-        // echo "<pre>";
-        // var_dump($_SERVER);
-        // echo "</pre>";
     }
-
-
-
 
 
 }
@@ -134,7 +127,7 @@ require __DIR__.'/../../includes/funciones.php';
 incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">
-    <h1>########### Crear ok ###########</h1>
+    <h1 class="titulo1"> Crear Anuncios </h1>
 
     <a href="../index.php"  class="boton boton-verde">Volver</a>
 
@@ -167,12 +160,7 @@ incluirTemplate('headerAnuncio');
             </select>
 
             <label for="usuario">Usuario:</label>
-            <!-- <select name="usuario">
-                <option value="">----- Seleccione usuario----</option>
-                <option value="1">Andres Lopez</option>
-                <option value="2">Marta Gomez</option>
-            </select> -->
-
+    
             <select name="usuario">
                 <option value="">----- Seleccione un usuario -----</option>
                 <?php while ($row2 =  mysqli_fetch_assoc($resultado2)) : ?>
