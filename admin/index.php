@@ -8,7 +8,7 @@ incluirTemplate('headerAdmin');
     <div class="contenedor">
 
         <h1>#### Administrador ####</h1>
-        <a href="http://localhost/BozzoCo/admin/anuncios/crear.php" class="boton boton-verde">Nuevo anuncio</a>
+        <a href="anuncios/crear.php" class="boton boton-verde">Nuevo anuncio</a>
 
     </div>
 </body>

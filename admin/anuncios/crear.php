@@ -30,19 +30,17 @@ $descripcion = "";
 // ejecuta el codigo despues de la verificacion 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        echo "<pre>";
-        var_dump($_POST);
-        echo "</pre>";
+        // echo "<pre>";
+        // var_dump($_POST);
+        // echo "</pre>";
 
     // $titulo = $_POST['usuario'];
 
         // exit;
 
-        echo "<pre>";
-        var_dump($_FILES);
-        echo "</pre>";
-
-    
+        // echo "<pre>";
+        // var_dump($_FILES);
+        // echo "</pre>";
 
     
     $servicio = mysqli_real_escape_string($db,  $_POST['servicio']);
@@ -101,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo $query;
 
-        // $resultado = mysqli_query($db, $query);
+        $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
             header('Location: ../index.php?resultado=1');
@@ -124,15 +122,15 @@ require __DIR__.'/../../includes/funciones.php';
 incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">
-    <h1>########### Crear ###########</h1>
+    <h1>########### Crear ok ###########</h1>
 
-    <a href="http://localhost/BozzoCo/admin/index.php"  class="boton boton-verde">Volver</a>
+    <a href="../index.php"  class="boton boton-verde">Volver</a>
 
-    <!-- <?php foreach ($errores as $error): ?>
+   <?php foreach ($errores as $error): ?>
         <div class="alerta error">
             <?php echo $error; ?>
         </div>
-    <?php endforeach; ?> -->
+    <?php endforeach; ?> 
 
         <!-- Formulario para crear un anuncio -->
     <form class="formulario" method="post" action="http://localhost/BozzoCo/admin/anuncios/crear.php" enctype="multipart/form-data">
@@ -145,15 +143,15 @@ incluirTemplate('headerAnuncio');
             <label for="servicio">Servicio:</label>
             <select name="servicio">
                 <option value="">----- Seleccione un servicio----</option>
-                <option value="">electricidad</option>
-                <option value="">vigilancia</option>
+                <option value="1">electricidad</option>
+                <option value="2">vigilancia</option>
             </select>
 
             <label for="usuario">Usuario:</label>
             <select name="usuario">
                 <option value="">----- Seleccione usuario----</option>
-                <option value="">Andres Lopez</option>
-                <option value="">Marta Gomez</option>
+                <option value="1">Andres Lopez</option>
+                <option value="2">Marta Gomez</option>
             </select>
 
             <label for="descripcion">Descripción del servicio:</label>
