@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // importar conexion 
 require __DIR__ . '/../../includes/config/database.php';
@@ -42,24 +42,24 @@ $descripcion = "";
 // ejecuta el codigo despues de la verificacion 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // echo "<pre>";
-        // var_dump($_POST);
-        // echo "</pre>";
+    // echo "<pre>";
+    // var_dump($_POST);
+    // echo "</pre>";
 
     // $titulo = $_POST['usuario'];
 
-        // exit;
+    // exit;
 
-        // echo "<pre>";
-        // var_dump($_FILES);
-        // echo "</pre>";
+    // echo "<pre>";
+    // var_dump($_FILES);
+    // echo "</pre>";
 
-    
+
     $servicio = mysqli_real_escape_string($db,  $_POST['servicio']);
     $usuario = mysqli_real_escape_string($db,  $_POST['usuario']);
     $descripcion = mysqli_real_escape_string($db,  $_POST['descripcion']);
 
-     //asignar file hacia una variable
+    //asignar file hacia una variable
     $imagen = $_FILES['imagen'];
     // var_dump($imagen['name']);
 
@@ -105,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 
 
-         // Insertar en la base de datos
+        // Insertar en la base de datos
 
         $query = " INSERT INTO inicio (imagen, servicio, usuario, descripcion ) VALUES ( '$nombreImagen', '$servicio', '$usuario',  '$descripcion' ) ";
 
@@ -116,28 +116,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($resultado) {
             header('Location: ../index.php?resultado=1');
         }
-
     }
-
-
 }
 
 
-require __DIR__.'/../../includes/funciones.php';
+require __DIR__ . '/../../includes/funciones.php';
 incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">
     <h1 class="titulo1"> Crear Anuncios </h1>
 
-    <a href="../index.php"  class="boton boton-verde">Volver</a>
+    <a href="../index.php" class="boton boton-verde">Volver</a>
 
-   <?php foreach ($errores as $error): ?>
+    <?php foreach ($errores as $error): ?>
         <div class="alerta error">
             <?php echo $error; ?>
         </div>
-    <?php endforeach; ?> 
+    <?php endforeach; ?>
 
-        <!-- Formulario para crear un anuncio -->
+    <!-- Formulario para crear un anuncio -->
     <form class="formulario" method="post" action="crear.php" enctype="multipart/form-data">
         <fieldset>
             <legend>Información General</legend>
@@ -146,21 +143,15 @@ incluirTemplate('headerAnuncio');
             <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
 
             <label for="servicio">Servicio:</label>
-            <!-- <select name="servicio">
-                <option value="">----- Seleccione un servicio----</option>
-                <option value="1">electricidad</option>
-                <option value="2">vigilancia</option>
-            </select> -->
-
             <select name="servicio">
                 <option value="">----- Seleccione un servicio -----</option>
                 <?php while ($row =  mysqli_fetch_assoc($resultado)) : ?>
-                    <option <?php echo $servicio === $row['id_servicio'] ? 'selected' : ''; ?> value="<?php echo $row['id_servicio']; ?>"> <?php echo $row['nombre_servicio'] ; ?> </option>
+                    <option <?php echo $servicio === $row['id_servicio'] ? 'selected' : ''; ?> value="<?php echo $row['id_servicio']; ?>"> <?php echo $row['nombre_servicio']; ?> </option>
                 <?php endwhile; ?>
             </select>
 
             <label for="usuario">Usuario:</label>
-    
+
             <select name="usuario">
                 <option value="">----- Seleccione un usuario -----</option>
                 <?php while ($row2 =  mysqli_fetch_assoc($resultado2)) : ?>
@@ -173,7 +164,7 @@ incluirTemplate('headerAnuncio');
 
         </fieldset>
 
-        
+
 
         <input type="submit" value="Crear anuncio" class="boton boton-verde">
     </form>
