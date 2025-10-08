@@ -124,8 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 
-        // debug carga de imagen
-
+        // // debug carga de imagen
         // if (move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen)) {
         //     echo "✅ Imagen subida correctamente";
         // } else {
