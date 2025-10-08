@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bozoo</title>
+     <link rel="shortcut icon" type="image/jpg" href="../../imagenesPrueba/logo.jpeg">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900';"
@@ -17,9 +18,9 @@
           <img src="../../src/img/logo.png" alt="logo" />
         </div> -->
         <nav class="navegacion-principal" id="nav">
-          <a href="http://localhost/BozzoCo/admin/anuncios/crear.php">Crear</a>
+          <a href="#">Crear</a>
           <a href="#">Eliminar</a>
-          <a href="http://localhost:3000/index.php">Pagina</a>
+          <a href="../../index.php">Pagina</a>
           <!-- <a href="contacto.php">Contacto</a> -->
         </nav>
       </div>

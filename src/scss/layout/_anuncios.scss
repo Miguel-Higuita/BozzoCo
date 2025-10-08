@@ -1,0 +1,60 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+@use "sass:color";
+
+.contenedor-anuncios {
+  width: 100%; 
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @include m.tablet {
+    @include m.grid(2, 2rem); // 2 columnas en tablet
+  }
+
+  @include m.desktop {
+    @include m.grid(3, 2rem); // 3 columnas en desktop
+  }
+}
+
+.anuncio {
+  background-color: color.adjust(v.$gris, $lightness: 5%);
+  border: 1px solid color.adjust(v.$gris, $lightness: -10%);
+  margin-bottom: 2rem;
+
+  .contenido-anuncio {
+    padding: 3rem;
+  }
+
+  h3,
+  p {
+    margin: 0;
+  }
+}
+
+.precio {
+  color: v.$verde;
+  font-weight: v.$bold;
+  font-size: 3rem;
+}
+
+.iconos-caracteristicas {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  max-width: 40rem;
+
+  li {
+    flex: 1;
+    display: flex;
+
+    img {
+      flex: 0 0 3rem;
+      margin-right: 1rem;
+    }
+
+    p {
+      font-weight: v.$black;
+    }
+  }
+}
