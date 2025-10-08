@@ -49,7 +49,7 @@ $resultadoConsulta = mysqli_query($db, $query);
 
 //Eliminar anuncio
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id_inicio'];
+    $id = $_POST['id'];
     $id = filter_var($id, FILTER_VALIDATE_INT);
 
     if ($id) {
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            header('Location: /admin/index?resultado=3');
+            header('Location: /BozzoCo/admin/index.php?resultado=3');
         }
     }
 }
