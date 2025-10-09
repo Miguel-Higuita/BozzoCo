@@ -1,4 +1,16 @@
 <?php
+
+
+
+require __DIR__ . '/../includes/funciones.php';
+
+$auth = autenticado();
+
+if (!$auth) {
+      header('Location: /bozzoco/index.php');
+}
+
+
 // echo "<pre>";
 // var_dump($_POST);
 // echo "</pre>";
@@ -75,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // incluye en template
-require __DIR__ . '/../includes/funciones.php';
+
 incluirTemplate('headerAdmin');
 ?>
 

@@ -29,3 +29,18 @@
 //     text-align: center;
 //     justify-content: center;
 // }
+
+
+.sesion {
+  background-color: v.$rojo;
+  padding-inline: 1rem;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: (v.$rojo, 10%);
+    color: v.$amarillo;
+  }
+}

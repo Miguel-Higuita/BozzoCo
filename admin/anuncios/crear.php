@@ -1,5 +1,13 @@
 <?php
 
+require __DIR__ . '/../../includes/funciones.php';
+
+$auth = autenticado();
+
+if (!$auth) {
+    header('Location: /bozzoco/index.php');
+}
+
 // importar conexion 
 require __DIR__ . '/../../includes/config/database.php';
 
@@ -120,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-require __DIR__ . '/../../includes/funciones.php';
+
 incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">

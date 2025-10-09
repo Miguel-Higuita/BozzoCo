@@ -1,5 +1,14 @@
 <?php
 
+require __DIR__ . '/../../includes/funciones.php';
+
+$auth = autenticado();
+
+if (!$auth) {
+    header('Location: /');
+}
+
+
 // Validar la URL por ID válido
 $id = $_GET['id'];
 $id = filter_var($id, FILTER_VALIDATE_INT);
@@ -184,12 +193,6 @@ $usuario = mysqli_fetch_assoc($resultadousuario);
 // $resultadoConsulta = mysqli_query($db, $query);
 
 
-
-
-
-
-
-require __DIR__ . '/../../includes/funciones.php';
 incluirTemplate('headerAnuncio');
 ?>
 <main class="contenedor seccion">
