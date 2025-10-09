@@ -1,7 +1,5 @@
 <?php
 
-
-
 require __DIR__ . '/../includes/funciones.php';
 
 $auth = autenticado();
@@ -9,7 +7,6 @@ $auth = autenticado();
 if (!$auth) {
       header('Location: /bozzoco/index.php');
 }
-
 
 // echo "<pre>";
 // var_dump($_POST);
