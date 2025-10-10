@@ -28,7 +28,7 @@ $auth  = $_SESSION['login'] ?? false;
     <link rel="stylesheet" href="../../build/css/app.css" />
   </head>
 
-
+<body>
 <header class="header">
     <div class="contenedor contenido-header">
         <a href="index.php">
