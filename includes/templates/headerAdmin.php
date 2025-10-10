@@ -31,8 +31,10 @@ $auth  = $_SESSION['login'] ?? false;
 <body>
   <header class="header">
     <div class="contenedor contenido_header">
-      <div class="contenedor contenido-header">
-        <a href="../index.php">
+      <nav class="navegacion-principal" id="nav">
+        <header class="header">
+    <div class="contenedor contenido-header">
+        <a href="index.php">
             <h1>Bozzo</h1>
         </a>
 
@@ -45,8 +47,8 @@ $auth  = $_SESSION['login'] ?? false;
 
         <nav class="navegacion-principal" id="nav">
           <!-- <a href="#">Crear</a>-->
-          <!-- <a href="../index.php">Administración</a>  -->
-          <a href="../index.php">Pagina</a>
+          <a href="../index.php">Administración</a> 
+          <a href="../../index.php">Pagina</a>
           <?php  if ($auth):?>
                  <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
             <?php  endif ?>
