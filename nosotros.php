@@ -9,13 +9,13 @@ incluirTemplate('header')
         <div class="nosotros__contenido">
         <div class="nosotros__texto">
             <p>
-                Bozzo nace 
+                Bozzo nace como una iniciativa para conectar personas y facilitar el acceso a servicios de calidad.
             </p>
             <p>
-                Somos jovenes 
+                Somos jóvenes emprendedores comprometidos con la innovación y la satisfacción del cliente.
             </p>
         </div>
-        <img class="nosotros__imagen" src="" alt="imagen nosotros"/>
+        <img class="nosotros__imagen" src="src/scss/img/3d-icono-apreton-manos-gesto-gente-negocios-apreton-manos-asociacion-apreton-manos-buen-trato-concepto-acuerdo-manos-humanas-blancas-negras-juntas-ilustracion-realista-redes-sociales_733455-162.jpg" alt="imagen nosotros"/>
         </div>
     </div>
     </main>
@@ -27,7 +27,7 @@ incluirTemplate('header')
         <div class="bloque">
             <img
             class="bloque__imagen"
-            src=""
+            src="src/scss/img/servicios.png"
             alt="porque comprar"
             />
             <h3 class="titulo3 bloque__titulo">Servicios de todo tipo</h3>
@@ -37,21 +37,21 @@ incluirTemplate('header')
         </div>
         <!-- bloque -->
         <div class="bloque">
-            <img class="bloque__imagen" src="" alt="">
+            <img class="bloque__imagen" src="src/scss/img/personas.png" alt="">
             <h3 class="titulo3 bloque__titulo">De todos, Para todos</h3>
             <p class="bloque__texto">
                 Bozzo, es un sistema de persona a persona, lo que lo hace diverso ante la sociedad</p>
         </div>
             <!-- bloque -->
             <div class="bloque">
-            <img class="bloque__imagen" src="" alt="">
+            <img class="bloque__imagen" src="src/scss/img/telefono.png" alt="">
             <h3 class="titulo3 bloque__titulo">Contacto Privado</h3>
             <p class="bloque__texto">
                 Contactos y comunicacion por la cuenta de cada persona, lo que hace un ambiente mas comodo. </p>
             </div>
             <!-- bloque -->
             <div class="bloque">
-            <img class="bloque__imagen" src="" alt="">
+            <img class="bloque__imagen" src="src/scss/img/seguridad.png" alt="">
             <h3 class="titulo3 bloque__titulo">Seguridad</h3>
             <p class="bloque__texto">
                 Mantenemos la informacion de nuestros clientes segura y con total privacidad. </p>

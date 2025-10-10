@@ -69,6 +69,12 @@
     }
   }
 }
+        &:hover {
+        color: v.$azulOscuro;
+        }
+    }
+}
+
 
 .nosotros__contenido {
   display: grid;
@@ -81,11 +87,11 @@
 }
 
 .nosotros__texto {
-  text-align: center;
-  padding: 1rem;
-  justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    justify-content: center;
+    font-family: v.$fuenteSecundaria;
 }
-
 @media (min-width: 768px) {
   .grid_2 {
     display: grid;

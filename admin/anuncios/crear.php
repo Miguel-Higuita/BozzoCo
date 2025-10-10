@@ -1,4 +1,5 @@
 <?php
+file_put_contents(__DIR__ . '/../../imagenes/prueba.txt', '✅ PHP puede escribir aquí');
 
 require __DIR__ . '/../../includes/funciones.php';
 
@@ -58,9 +59,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // exit;
 
-    // echo "<pre>";
-    // var_dump($_FILES);
-    // echo "</pre>";
+    echo "<pre>";
+    var_dump($_FILES);
+    echo "</pre>";
 
 
     $servicio = mysqli_real_escape_string($db,  $_POST['servicio']);
@@ -100,17 +101,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /** SUBIDA DE ARCHIVOS */
 
         // Crear carpeta
-        $carpetaImagenes = '../../imagenes/';
+        $carpetaImagenes = __DIR__ . '/../../imagenes/';
+
+
+        if (is_writable($carpetaImagenes)) {
+            echo "✅ PHP tiene permiso de escritura en $carpetaImagenes";
+        } else {
+            echo "❌ PHP NO puede escribir en $carpetaImagenes";
+        }
+
+        // if (!is_dir($carpetaImagenes)) {
+        //     mkdir($carpetaImagenes);
+        // }
+
+
 
         if (!is_dir($carpetaImagenes)) {
-            mkdir($carpetaImagenes);
+            mkdir($carpetaImagenes, 0755, true);
         }
 
         // Generar un nombre único
         $nombreImagen = md5(uniqid(rand(), true)) . ".jpg";
 
+
+
         // mover la imagen
+        if (!file_exists($imagen['tmp_name'])) {
+            die("❌ El archivo temporal ya no existe: " . $imagen['tmp_name']);
+        }
+
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
+
+        // // debug carga de imagen
+        // if (move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen)) {
+        //     echo "✅ Imagen subida correctamente";
+        // } else {
+        //     echo "❌ Error al mover la imagen a: " . $carpetaImagenes . $nombreImagen;
+        // }
+        // exit;
 
 
         // Insertar en la base de datos
