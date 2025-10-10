@@ -6,7 +6,7 @@ session_start();
 
 $auth  = $_SESSION['login'] ?? false;
 
-var_dump($auth)
+// var_dump($auth)
 
 
 ?>
@@ -29,6 +29,14 @@ var_dump($auth)
         <a href="index.php">
             <h1>Bozzo</h1>
         </a>
+
+         <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="linea"></span>
+            <span class="linea"></span>
+            <span class="linea"></span>
+        </button>
+
         <nav class="navegacion-principal" id="nav">
           <!-- <a href="#">Crear</a>-->
           <a href="../index.php">Administración</a> 

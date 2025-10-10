@@ -7,5 +7,14 @@
         </p>
 
     </footer>
+    <script>
+  const btnMenu = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.navegacion-principal');
+
+  btnMenu.addEventListener('click', () => {
+    btnMenu.classList.toggle('activo');
+    nav.classList.toggle('activo');
+  });
+</script>
     </body>
 </html>

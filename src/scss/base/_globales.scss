@@ -15,14 +15,12 @@ html {
 }
 
 body {
+  
+ margin-top: 12rem; // ajusta según la altura del header
   font-family: v.$fuentePrincipal;
-
   font-optical-sizing: auto;
-
   font-style: normal;
-
   color: v.$negro;
-
   font-size: 2rem;
 
   &.overflow-hidden {

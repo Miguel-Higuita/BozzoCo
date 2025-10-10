@@ -5,7 +5,7 @@ require __DIR__ . '/../includes/funciones.php';
 $auth = autenticado();
 
 if (!$auth) {
-      header('Location: /bozzoco/index.php');
+    header('Location: /bozzoco/index.php');
 }
 
 // echo "<pre>";
@@ -102,42 +102,45 @@ incluirTemplate('headerAdmin');
     <?php endif; ?>
 
     <a href="anuncios/crear.php" class="boton boton-verde">Nuevo anuncio</a>
-    <table class="tAnuncios">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Usuario</th>
-                <th>Servicio</th>
-                <th>Imagen</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
+   
 
-        <tbody>
-            <?php while ($anuncio = mysqli_fetch_assoc($resultadoConsulta)): ?>
+    <div class="tabla-responsive">
+        <table class="tAnuncios">
+            <thead>
                 <tr>
-                    <td><?php echo $anuncio['id_inicio']; ?></td>
-                    <td><?php echo $anuncio['nombre_usuario']; ?></td>
-                    <td><?php echo $anuncio['nombre_servicio']; ?></td>
-                    <td>
-                        <img src="../imagenes/<?php echo $anuncio['imagen']; ?>"
-                            class="imagen-tabla"
-                            alt="imagen">
-                    </td>
-                    <td>
-                        <form method="POST">
-                            <input type="hidden" name="id" value="<?php echo $anuncio['id_inicio']; ?>">
-                            <input type="submit" class="boton-rojo-block" value="Eliminar">
-                        </form>
-
-                        <a href="anuncios/actualizar.php?id=<?php echo $anuncio['id_inicio']; ?>"
-                            class="boton-amarillo-block">Actualizar</a>
-                    </td>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Servicio</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
                 </tr>
-            <?php endwhile; ?>
-        </tbody>
+            </thead>
 
-    </table>
+            <tbody>
+                <?php while ($anuncio = mysqli_fetch_assoc($resultadoConsulta)): ?>
+                    <tr>
+                        <td data-label="ID"><?php echo $anuncio['id_inicio']; ?></td>
+                        <td data-label="Usuario"><?php echo htmlspecialchars($anuncio['nombre_usuario']); ?></td>
+                        <td data-label="Servicio"><?php echo htmlspecialchars($anuncio['nombre_servicio']); ?></td>
+                        <td data-label="Imagen">
+                            <img src="../imagenes/<?php echo htmlspecialchars($anuncio['imagen']); ?>"
+                                class="imagen-tabla"
+                                alt="imagen del servicio">
+                        </td>
+                        <td data-label="Acciones" class="acciones">
+                            <form method="POST">
+                                <input type="hidden" name="id" value="<?php echo $anuncio['id_inicio']; ?>">
+                                <input type="submit" class="boton-rojo-block" value="Eliminar">
+                            </form>
+
+                            <a href="anuncios/actualizar.php?id=<?php echo $anuncio['id_inicio']; ?>"
+                                class="boton-amarillo-block">Actualizar</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+    </div>
 
 </main>
 

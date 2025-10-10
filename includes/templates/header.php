@@ -1,12 +1,12 @@
 <?php
 
-if(!isset($_SESSION)) {
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
 }
 
 $auth  = $_SESSION['login'] ?? false;
 
-var_dump($auth)
+// var_dump($auth)
 
 
 ?>
@@ -32,20 +32,30 @@ var_dump($auth)
         <a href="index.php">
             <h1>Bozzo</h1>
         </a>
+
+        <!-- Botón Hamburguesa -->
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="linea"></span>
+            <span class="linea"></span>
+            <span class="linea"></span>
+        </button>
+
+
+
         <nav class="navegacion-principal">
             <a href="index.php">Inicio</a>
             <a href="servicios.php">Servicios</a>
             <a href="nosotros.php">Nosotros</a>
 
-             <?php  if (!$auth):?>
-                 <a href="loginupb.php">Iniciar sesion</a>
-            <?php  endif ?>
-            <?php  if ($auth):?>
-                 <a href="admin/index.php" class="sesion">administrador</a>
-            <?php  endif ?>
-            <?php  if ($auth):?>
-                 <a href="cerrar_sesion.php" class="sesion">Cerrar sesion</a>
-            <?php  endif ?>
+            <?php if (!$auth): ?>
+                <a href="loginupb.php">Iniciar sesion</a>
+            <?php endif ?>
+            <?php if ($auth): ?>
+                <a href="admin/index.php" class="sesion">administrador</a>
+            <?php endif ?>
+            <?php if ($auth): ?>
+                <a href="cerrar_sesion.php" class="sesion">Cerrar sesion</a>
+            <?php endif ?>
 
         </nav>
     </div>

@@ -1,5 +1,6 @@
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
+@use "sass:color";
 
 .alerta {
   padding: 0.5rem;
@@ -18,37 +19,175 @@
   }
 }
 
-table.tAnuncios {
-  margin-top: 4rem;
+.tabla-responsive {
   width: 100%;
-  
-  border-spacing: 0;
+  overflow-x: auto;
+}
+
+/* ====== Vista de tabla (por defecto: desktop/tablet) ====== */
+.tAnuncios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 3rem;
+  min-width: 40rem;
 
   thead {
     background-color: v.$verde;
+    color: v.$blanco;
 
     th {
-      color: v.$blanco;
-      padding: 2rem;
+      padding: 1.2rem;
       text-align: center;
+      font-weight: bold;
+      letter-spacing: 0.5px;
     }
   }
 
   tbody {
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
     td {
-      text-align: center; 
       padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
     }
   }
 
   .imagen-tabla {
-    width: 10rem;
-    display: block;  
+    width: 8rem;
+    border-radius: 8px;
+    display: block;
     margin: 0 auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  /* contenedor de botones (desktop/tablet) */
+  .acciones {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .boton-rojo-block,
+  .boton-amarillo-block {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    text-align: center;
   }
 }
 
-.imagen-small {
-  width: 20rem;
+/* ====== Vista tipo tarjeta (solo móviles) ====== */
+@media (max-width: 768px) {
+  .tabla-responsive {
+    overflow-x: hidden;
+  }
+
+  .tAnuncios,
+  .tAnuncios thead,
+  .tAnuncios tbody,
+  .tAnuncios th,
+  .tAnuncios td,
+  .tAnuncios tr {
+    display: block;
+    width: 100%;
+  }
+
+  .tAnuncios thead {
+    display: none;
+  }
+
+  .tAnuncios tr {
+    background: v.$blanco;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  }
+
+  .tAnuncios td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.8rem 0;
+    border: none;
+
+    &::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: v.$verde;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  /* 🔹 botones uno debajo del otro */
+  .tAnuncios .acciones {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+
+  .tAnuncios .acciones form,
+  .tAnuncios .acciones a {
+    width: 100%;
+  }
+
+  .tAnuncios .acciones .boton-rojo-block,
+  .tAnuncios .acciones .boton-amarillo-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .tAnuncios .imagen-tabla {
+    width: 100%;
+    max-width: 14rem;
+    margin: 1rem auto;
+  }
 }
 
+/* ====== Reestablecer vista tipo tabla (tablet/desktop) ====== */
+@media (min-width: 769px) {
+  .tAnuncios {
+    display: table;
+
+    thead {
+      display: table-header-group;
+    }
+
+    tbody {
+      display: table-row-group;
+    }
+
+    tr {
+      display: table-row;
+    }
+
+    td,
+    th {
+      display: table-cell;
+    }
+
+    .acciones {
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}
