@@ -52,7 +52,7 @@ $auth  = $_SESSION['login'] ?? false;
                 <a href="loginupb.php">Iniciar sesion</a>
             <?php endif ?>
             <?php if ($auth): ?>
-                <a href="admin/index.php" class="sesion">administrador</a>
+                <a href="admin/index.php" class="sesion">Administrador</a>
             <?php endif ?>
             <?php if ($auth): ?>
                 <a href="cerrar_sesion.php" class="sesion">Cerrar sesion</a>

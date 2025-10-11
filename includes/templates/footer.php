@@ -3,7 +3,7 @@
             Todos los derechos reservados Bozzo &copy; 2025
         </p>
         <p class="footer__tyc">
-            Aplican terminos y condiciones
+            Aplican <a href="tyc.php">terminos y condiciones</a>
         </p>
 
     </footer>

@@ -1,0 +1,43 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.terminosycondiciones {
+    ol {
+        padding-left: 2rem;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        color: v.$blanco; 
+        line-height: 1.7;
+
+        li {
+            margin-bottom: 1.5rem;
+            background: v.$grisOscuro; 
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+
+            &::marker {
+                font-weight: bold;
+                color: v.$negro; 
+                font-size: 1.2em;
+            }
+            ul {
+                list-style-type: none; 
+                padding-left: 1.5rem;
+
+                li {
+                    position: relative;
+                    padding-left: 1.2em;
+
+                    &::before {
+                        content: "• "; 
+                        position: absolute;
+                        left: 0;
+                        color: v.$blanco; // O el color que prefieras
+                        font-size: 1.1em;
+                    }
+                }
+            }
+        }
+    }
+}

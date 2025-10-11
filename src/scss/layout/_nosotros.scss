@@ -56,7 +56,7 @@
   }
 
   .sesion {
-    background-color: v.$rojo;
+    background-color: v.$grisOscuro;
     padding-inline: 1rem;
     border-radius: 10px;
     color: white;
@@ -64,15 +64,14 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: (v.$rojo, 10%);
-      color: v.$negro;
+      background-color: (v.$grisOscuro, 10%);
+      color: v.$gris;
     }
   }
-}
+
         &:hover {
         color: v.$azulOscuro;
         }
-    }
 }
 
 

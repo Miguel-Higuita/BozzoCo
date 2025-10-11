@@ -15,7 +15,7 @@ incluirTemplate('header')
                 Somos jóvenes emprendedores comprometidos con la innovación y la satisfacción del cliente.
             </p>
         </div>
-        <img class="nosotros__imagen" src="src/scss/img/3d-icono-apreton-manos-gesto-gente-negocios-apreton-manos-asociacion-apreton-manos-buen-trato-concepto-acuerdo-manos-humanas-blancas-negras-juntas-ilustracion-realista-redes-sociales_733455-162.jpg" alt="imagen nosotros"/>
+        <img class="nosotros__imagen" src="src/scss/img/icono-apreton-manos-estilo-plano_169241-482.jpg" alt="imagen nosotros"/>
         </div>
     </div>
     </main>

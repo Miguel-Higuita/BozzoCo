@@ -48,7 +48,7 @@ $auth  = $_SESSION['login'] ?? false;
         <nav class="navegacion-principal" id="nav">
           <!-- <a href="#">Crear</a>-->
           <a href="../index.php">Administración</a> 
-          <a href="../../index.php">Pagina</a>
+          <a href="../index.php">Pagina</a>
           <?php  if ($auth):?>
                  <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
             <?php  endif ?>
