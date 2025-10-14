@@ -18,7 +18,7 @@ incluirTemplate('header')
     <div class="grid ofertores">
         <div class="servicio1">
                 <a href="#">
-                    <img class="servicio__imagen" src="#" alt="#" />
+                    <img class="servicio__imagen" src="imagenesPrueba/electricista.jpeg" alt="#" />
                     <div class="servicio__informacion">
                     <b><p class="servicio__nombre">#</p>
                     <p class="servicio__labor">$$</p></b>
@@ -27,7 +27,7 @@ incluirTemplate('header')
         </div>
         <div class="servicio1">
                 <a href="#">
-                    <img class="servicio__imagen" src="#" alt="#" />
+                    <img class="servicio__imagen" src="imagenesPrueba/mecanico.jpeg" alt="#" />
                     <div class="servicio__informacion">
                     <b><p class="servicio__nombre">#</p>
                     <p class="servicio__labor">$$</p></b>
@@ -36,7 +36,7 @@ incluirTemplate('header')
         </div>
         <div class="servicio1">
                 <a href="#">
-                    <img class="servicio__imagen" src="#" alt="#" />
+                    <img class="servicio__imagen" src="imagenesPrueba/vigilancia.jpeg" alt="#" />
                     <div class="servicio__informacion">
                     <b><p class="servicio__nombre">#</p>
                     <p class="servicio__labor">$$</p></b>
@@ -44,6 +44,8 @@ incluirTemplate('header')
                 </a>
         </div>
     </div>
+    
+    <?php include 'includes/templates/ws.php'; ?>
     
 </main>
 

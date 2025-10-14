@@ -10,10 +10,10 @@ $db = conectarDB();
 
 // Consultar con JOIN para traer usuario y servicio directamente
 $query = "SELECT inicio.*, CONCAT(usuario.nombre, ' ', usuario.apellido) AS nombre_usuario, servicio.nombre_servicio 
-          FROM inicio
-          JOIN usuario ON inicio.usuario = usuario.id_usuario
-          JOIN servicio ON inicio.servicio = servicio.id_servicio
-          LIMIT $limite";
+            FROM inicio
+            JOIN usuario ON inicio.usuario = usuario.id_usuario
+            JOIN servicio ON inicio.servicio = servicio.id_servicio
+            LIMIT $limite";
 
 $resultado = mysqli_query($db, $query);
 ?>

@@ -38,7 +38,7 @@ $auth  = $_SESSION['login'] ?? false;
             <h1>Bozzo</h1>
         </a>
 
-         <!-- Botón Hamburguesa -->
+        <!-- Botón Hamburguesa -->
         <button class="menu-toggle" aria-label="Abrir menú">
             <span class="linea"></span>
             <span class="linea"></span>
@@ -50,7 +50,7 @@ $auth  = $_SESSION['login'] ?? false;
           <a href="../index.php">Administración</a> 
           <a href="../index.php">Pagina</a>
           <?php  if ($auth):?>
-                 <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
+                <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
             <?php  endif ?>
           <!-- <a href="contacto.php">Contacto</a> -->
         </nav>

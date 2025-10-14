@@ -115,7 +115,7 @@ incluirTemplate('header');
 
 </main>
 
-
+<?php include 'includes/templates/ws.php'; ?>
 <?php
 incluirTemplate('footer');
 ?>

@@ -20,7 +20,7 @@ $auth  = $_SESSION['login'] ?? false;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-     <link rel="shortcut icon" type="image/jpg" href="../../imagenesPrueba/logo.jpeg">
+    <link rel="shortcut icon" type="image/jpg" href="../../imagenesPrueba/logo.jpeg">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900';"
@@ -35,7 +35,7 @@ $auth  = $_SESSION['login'] ?? false;
             <h1>Bozzo</h1>
         </a>
 
-         <!-- Botón Hamburguesa -->
+        <!-- Botón Hamburguesa -->
         <button class="menu-toggle" aria-label="Abrir menú">
             <span class="linea"></span>
             <span class="linea"></span>
@@ -47,7 +47,7 @@ $auth  = $_SESSION['login'] ?? false;
           <a href="../index.php">Administración</a> 
           <a href="../../index.php">Pagina</a>
           <?php  if ($auth):?>
-                 <a href="../../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
+                <a href="../../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
             <?php  endif ?>
           <!-- <a href="contacto.php">Contacto</a> -->
         </nav>

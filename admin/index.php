@@ -47,7 +47,7 @@ $query = "
     INNER JOIN usuario u ON i.usuario = u.id_usuario
     INNER JOIN servicio s ON i.servicio = s.id_servicio
     ORDER BY i.id_inicio ASC
-   
+
 ";
 $resultadoConsulta = mysqli_query($db, $query);
 
@@ -102,7 +102,7 @@ incluirTemplate('headerAdmin');
     <?php endif; ?>
 
     <a href="anuncios/crear.php" class="boton boton-verde">Nuevo anuncio</a>
-   
+
 
     <div class="tabla-responsive">
         <table class="tAnuncios">

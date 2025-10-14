@@ -3,9 +3,9 @@ incluirTemplate('header')
 ?>
 
 <main class="contenedor">
-    <h2 class="">Terminos y condiciones</h2>
-    <div class="terminosycondiciones">
-    <ol>
+        <h2 class="">Terminos y condiciones</h2>
+        <div class="terminosycondiciones">
+        <ol>
         <li><strong>Naturaleza del servicio:</strong>
 
 Bozzo es únicamente un medio de publicación y visualización de ofertas o anuncios de servicios interbarriales.
@@ -55,9 +55,10 @@ El uso continuado de la plataforma implica la aceptación de dichas modificacion
 
 Para cualquier duda o comentario sobre estos Términos y Condiciones, puedes comunicarte con el equipo de Bozzo a través de nuestro correo oficial:
 contacto@bozzo.com</li>
-    </ol>
-    <p>Ultima fecha de modificación: 10/10/2025</p>
-    </div>
+        </ol>
+        <p>Ultima fecha de modificación: 10/10/2025</p>
+        </div>
 </main>
+<?php include 'includes/templates/ws.php'; ?>
 
 <?php include 'includes/templates/footer.php'; ?>

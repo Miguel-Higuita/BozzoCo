@@ -4,7 +4,8 @@
 .footer {
     width: 100%;
     background-color: v.$azulClaro;
-    padding: 1rem;
+    padding: 0.1rem 0;
+
     
     .footer__texto{
         color: v.$negro;
@@ -19,4 +20,10 @@
         color: v.$negro;
         text-decoration: underline;
     }
+
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
 }

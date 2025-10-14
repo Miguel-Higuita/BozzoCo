@@ -14,6 +14,16 @@ incluirTemplate('header')
             <p>
                 Somos jóvenes emprendedores comprometidos con la innovación y la satisfacción del cliente.
             </p>
+            <p>
+                bozzoco@gmail.com
+            </p>
+            <p>
+                3022904587
+            </p>
+            <p>
+                Circular 1ª # 70-01, barrio Laureles
+            </p>
+
         </div>
         <img class="nosotros__imagen" src="src/scss/img/icono-apreton-manos-estilo-plano_169241-482.jpg" alt="imagen nosotros"/>
         </div>
@@ -58,4 +68,5 @@ incluirTemplate('header')
         </div>
     </div>
     </section>
+<?php include 'includes/templates/ws.php'; ?>
 <?php include 'includes/templates/footer.php'; ?>
