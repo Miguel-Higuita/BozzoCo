@@ -1,80 +1,129 @@
-@use "../base/variables" as v;
-@use "../base/mixins" as m;
+// @use "sass:color";
+// @use "../base/variables" as v;
+// @use "../base/mixins" as m;
 
-.boton-verde{
-    color: v.$negro;
-}
+// // ============================
+// // BOTÓN
+// // ============================
+// .boton-verde {
+//   color: v.$negro;
+//   background-color: v.$verde;
+//   padding: 0.75rem 1.5rem;
+//   border-radius: 0.75rem;
+//   font-weight: 600;
+//   text-align: center;
+//   transition: background-color 0.3s, transform 0.3s;
 
-.servicio1{
-    background-color: v.$azulClaro;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-    transition: transform .3s, box-shadow .3s;
-    margin: 1rem;
+//   &:hover {
+//     background-color: color.adjust(v.$verde, $lightness: -10%);
+//     transform: scale(1.05);
+//   }
+// }
 
-    &:hover {
-        transform: scale(1.03);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-    }
-}
+// // ============================
+// // GRID DE SERVICIOS
+// // ============================
+// .grid {
+//   display: grid;
+//   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//   gap: 1.5rem;
+//   align-items: stretch;  // fuerza que todas las tarjetas tengan la misma altura
+//   padding: 1rem;
+// }
 
-.servicio__imagen{
-    width: 100%;
-    height: 300px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    border-radius: 1rem;
-}
+// // ============================
+// // TARJETAS DE SERVICIO
+// // ============================
+// .servicio1 {
+//   width: 100%;  // ocupa todo el ancho de su columna
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: flex-start;
+//   padding: 2rem;
+//   border-radius: 1.5rem;
+//   background-color: v.$azulClaro;
+//   box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+//   transition: transform 0.3s, box-shadow 0.3s;
 
+//   &:hover {
+//     transform: scale(1.03);
+//     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+//   }
+// }
 
-.servicio__nombre{
-    font-size: 2rem;
-}
+// // ============================
+// // IMÁGENES
+// // ============================
+// .servicio__imagen {
+//   width: 100%;        // ocupa todo el ancho de la tarjeta
+//   height: 200px;      // altura fija para todas las imágenes
+//   object-fit: cover;  // mantiene proporción y recorta lo que sobra
+//   border-radius: 1rem;
+//   box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+//   margin-bottom: 1rem;
+// }
 
-.servicio__labor{
-    font-size: 1.5rem;
-    color: v.$negro;
-    padding-top: 2rem;
-}
+// // ============================
+// // TEXTOS
+// // ============================
+// .servicio__nombre {
+//   font-size: 2rem;
+// }
 
-.servicio__nombre,
-.servicio__labor{
-    color: v.$blanco;
-    font-family: v.$fuenteSecundaria;
-    font-weight: 600;
-    margin: 1rem 0;
-    text-align: center;
-    line-height: 1.2rem;
-}
+// .servicio__labor {
+//   font-size: 1.5rem;
+//   padding-top: 1rem;
+// }
 
-@include m.telefono{
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
-    .servicio1{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-}
+// .servicio__nombre,
+// .servicio__labor {
+//   color: v.$blanco;
+//   font-family: v.$fuenteSecundaria;
+//   font-weight: 600;
+//   margin: 0.5rem 0;
+//   text-align: center;
+//   line-height: 1.2;
+//   word-break: break-word;
+// }
 
-@include m.tablet{
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-    }
-    .servicio1{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-}
-@include m.desktop{
-    .grid {
-        grid-template-columns: repeat(3,1fr);
-        display: grid;
-        gap: 1rem;
-    }
-    .servicio1{
-        margin-left: 2rem;
-    }
-}
+// // ============================
+// // RESPONSIVIDAD
+// // ============================
+
+// // Móviles (1 columna)
+// @include m.telefono {
+//   .grid {
+//     grid-template-columns: 1fr;
+//     gap: 1rem;
+//   }
+
+//   .servicio__imagen {
+//     height: 220px;
+//   }
+// }
+
+// // Tablets (2 columnas)
+// @include m.tablet {
+//   .grid {
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 1.5rem;
+//   }
+
+//   .servicio__imagen {
+//     height: 250px;
+//   }
+// }
+
+// // Escritorio (3 columnas)
+// @include m.desktop {
+//   .grid {
+//     grid-template-columns: repeat(3, 1fr);
+//     gap: 2rem;
+//     padding: 2rem;
+//   }
+
+//   .servicio__imagen {
+//     height: 280px;
+//   }
+// }

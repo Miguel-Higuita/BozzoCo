@@ -1,46 +1,39 @@
+@use "sass:color";
 @use "../base/variables" as v;
 @use "../base/mixins" as m;
 
-// .contenedor-servicios{
-//     display: grid;
-//     grid-template-columns: 20% 80%;
-//     gap: 2rem;
-//     margin-right: 4rem;
-// }
+// ============================
+// BOTÓN
+// ============================
+.boton-verde {
+  color: v.$negro;
+  background-color: v.$verde;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
 
-// .sidebar{
-//     grid-column: 1;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     height: 100%;
-// }
+  &:hover {
+    background-color: color.adjust(v.$verde, $lightness: -10%);
+    transform: scale(1.05);
+  }
+}
 
-// .servicios{
-//     grid-column: 2;
-
-// }
-
-// .texto-lista{
-//     text-align: center;
-//     font-family: v.$fuentePrincipal;
-//     position: center;
-// }
-
-// h2{
-//     font-size: 3rem;
-//     text-align: center;
-//     font-family: v.$fuentePrincipal;
-// }
-
+// ============================
+// CONTENEDOR PRINCIPAL
+// ============================
 .contenedor-servicios {
   display: flex;
+  flex-direction: column; // sigue siendo columna para móviles
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center; // ✅ cambia a center
 
   @include m.tablet {
-    gap: 3rem;
+         flex-direction: row; // fila para desktop/tablet
+        align-items: flex-start; // sidebar y grid alineados arriba
+        justify-content: center; // centra el conjunto horizontalmente
+        gap: 3rem;
   }
 
   @include m.desktop {
@@ -48,18 +41,25 @@
   }
 }
 
+// ============================
+// SIDEBAR
+// ============================
 .sidebar {
-  width: 25rem;
-  
+  width: 100%;
   padding: 1.5rem;
   border-radius: 1.2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+
+  @include m.tablet {
+    width: 25rem;
+  }
 
   .contenedor_sidebar {
     display: flex;
     flex-direction: column;
-    align-items: center; // ✅ centra todo horizontalmente
-    gap: 1rem; // espacio entre h1, h2 y lista
+    align-items: center;
+    gap: 1rem;
 
     h1 {
       text-align: center;
@@ -69,15 +69,16 @@
     }
 
     h2 {
-      margin-bottom: 1rem;
-      color: v.$negro;
-      font-size: 1.6rem;
       text-align: center;
+      color: v.$negro;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
     }
 
     .lista-servicios {
       list-style: none;
       padding: 0;
+      width: 100%;
 
       li {
         margin-bottom: 0.8rem;
@@ -90,7 +91,7 @@
           transition: color 0.3s ease;
 
           &:hover {
-            color: v.$negro;
+            color: v.$azulClaro;
           }
         }
       }
@@ -98,6 +99,9 @@
   }
 }
 
+// ============================
+// FORMULARIO
+// ============================
 .form-servicios {
   display: flex;
   flex-direction: column;
@@ -112,7 +116,7 @@
 
   select {
     padding: 0.8rem;
-    border: 1px solid (v.$gris, 20%);
+    border: 1px solid color.adjust(v.$gris, $alpha: 0.2);
     border-radius: 0.8rem;
     background-color: #fff;
     font-size: 1.5rem;
@@ -125,8 +129,139 @@
 
     &:focus {
       outline: none;
-      border-color: (v.$azulClaro, 5%);
+      border-color: color.adjust(v.$azulClaro, $alpha: 0.05);
       box-shadow: 0 0 0 2px rgba(v.$azulOscuro, 0.1);
     }
+  }
+}
+
+// ============================
+// GRID DE SERVICIOS
+// ============================
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, max-content));
+  gap: 1.5rem;
+  justify-content: center; // ✅ centra las columnas en el contenedor
+  align-items: stretch;
+  padding: 1rem;
+}
+
+// ============================
+// TARJETAS DE SERVICIO
+// ============================
+
+.servicio1 {
+  width: 250px; // igual que tu minmax
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem; // padding para separar contenido de los bordes
+  border-radius: 1.5rem;
+  background-color: v.$azulClaro;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 0;
+  overflow: hidden; // recorta imágenes si exceden
+  min-height: 350px;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+
+// ============================
+// IMÁGENES
+// ============================
+.servicio__imagen {
+  width: 100%; // ocupa todo el ancho del contenido
+  aspect-ratio: 4 / 3; // mismo ancho y alto para todas
+  object-fit: cover; // recorta para mantener proporción
+  border-radius: 1rem;
+  margin: 0; // margin cero para evitar desbordes
+}
+
+// ============================
+// TEXTOS
+// ============================
+.servicio__nombre {
+  font-size: 2rem;
+  margin: 0.5rem 0 0.25rem;
+  color: v.$blanco;
+  font-family: v.$fuenteSecundaria;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.servicio__labor {
+  font-size: 1.5rem;
+  padding: 0.25rem 0 0.5rem;
+  color: v.$blanco;
+  font-family: v.$fuenteSecundaria;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+// ============================
+// RESPONSIVIDAD
+// ============================
+
+// Móviles (1 columna)
+@include m.telefono {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .servicio1 {
+    min-height: 300px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .form-servicios {
+    font-size: 1.2rem;
+  }
+}
+
+// Tablets (2 columnas)
+@include m.tablet {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .servicio1 {
+    min-height: 350px;
+  }
+
+  .sidebar {
+    width: 25rem;
+  }
+}
+
+// Escritorio (3 columnas)
+@include m.desktop {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .servicio1 {
+    min-height: 400px;
+  }
+
+  .sidebar {
+    width: 25rem;
   }
 }
