@@ -42,22 +42,21 @@ $auth  = $_SESSION['login'] ?? false;
         </button>
 
 
+        <?php $paginaActual = basename($_SERVER['PHP_SELF']); ?>
 
         <nav class="navegacion-principal">
-            <a href="index.php">Inicio</a>
-            <a href="servicios.php">Servicios</a>
-            <a href="nosotros.php">Nosotros</a>
+            <a href="index.php" class="<?php echo $paginaActual === 'index.php' ? 'activo' : ''; ?>">Inicio</a>
+            <a href="servicios.php" class="<?php echo $paginaActual === 'servicios.php' ? 'activo' : ''; ?>">Servicios</a>
+            <a href="nosotros.php" class="<?php echo $paginaActual === 'nosotros.php' ? 'activo' : ''; ?>">Nosotros</a>
 
             <?php if (!$auth): ?>
-                <a href="loginupb.php">Iniciar sesion</a>
-            <?php endif ?>
+                <a href="loginupb.php" class="<?php echo $paginaActual === 'loginupb.php' ? 'activo' : ''; ?>">Iniciar sesión</a>
+            <?php endif; ?>
+
             <?php if ($auth): ?>
                 <a href="admin/index.php" class="sesion">Administrador</a>
-            <?php endif ?>
-            <?php if ($auth): ?>
-                <a href="cerrar_sesion.php" class="sesion">Cerrar sesion</a>
-            <?php endif ?>
-
+                <a href="cerrar_sesion.php" class="sesion">Cerrar sesión</a>
+            <?php endif; ?>
         </nav>
     </div>
 </header>
