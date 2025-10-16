@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2025 a las 04:15:48
+-- Tiempo de generación: 16-10-2025 a las 03:19:31
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,8 +44,7 @@ INSERT INTO `inicio` (`id_inicio`, `imagen`, `servicio`, `usuario`, `descripcion
 (5, 'a39430bd77d77dba5464763b1eb7867d.jpg', 5, 2, 'pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar pasar ', '2025-10-07 04:44:33'),
 (6, '3739a8a92550de77186f2bc0e13331ad.jpg', 3, 3, 'martes gvfhfgjhhhj hfgjghkjh gjhfgjkghkfg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf h', '2025-10-07 20:06:16'),
 (7, 'be09d5c281e1ecb83362a046301007db.jpg', 2, 8, 'martes 2 g gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf hg gjhdhjkhfgk gjjkdf h', '2025-10-07 20:07:45'),
-(8, 'd1d05164d53960ac02bb2da021469db1.jpg', 3, 8, 'Miercoles madrugada j fghdhfgj hgfjhjdg fgjhgjkfghk fgjghkghk fgjhdgkghk jghkgfkh gjghkgkfk jghkk fsdgfdhgj fghdhfgj hgfjhjdg fgjhgjkfghk fgjghkghk fgjhdgkghk jghkgfkh gjghkgkfk jghkk', '2025-10-08 07:03:04'),
-(9, 'b85d44335b63b0eb31c4566ba6b6efcb.jpg', 3, 3, 'asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd', '2025-10-11 02:55:48');
+(8, 'd1d05164d53960ac02bb2da021469db1.jpg', 3, 8, 'Miercoles madrugada j fghdhfgj hgfjhjdg fgjhgjkfghk fgjghkghk fgjhdgkghk jghkgfkh gjghkgkfk jghkk fsdgfdhgj fghdhfgj hgfjhjdg fgjhgjkfghk fgjghkghk fgjhdgkghk jghkgfkh gjghkgkfk jghkk', '2025-10-08 07:03:04');
 
 -- --------------------------------------------------------
 
@@ -68,13 +67,7 @@ INSERT INTO `servicio` (`id_servicio`, `nombre_servicio`, `descripcion_servicio`
 (2, 'Vigilancia', 'Brindamos soluciones integrales en seguridad física para la protección de personas, bienes e instalaciones. Nuestro personal de vigilancia está altamente capacitado para garantizar un entorno seguro, confiable y controlado en todo momento.'),
 (3, 'Aseo', 'Ofrecemos soluciones profesionales en limpieza y mantenimiento para hogares, oficinas, empresas e instituciones. Nuestro personal está capacitado para garantizar espacios limpios, ordenados e higiénicos, mejorando la comodidad y el bienestar de quienes los disfrutan.'),
 (4, 'Mecánica', 'Brindamos servicios de mecánica general y especializada para vehículos. Realizamos diagnóstico, reparación y mantenimiento preventivo y correctivo, asegurando el buen funcionamiento y la seguridad de su automóvil.'),
-(5, 'Electricidad', 'Ofrecemos servicios eléctricos profesionales para instalaciones residenciales, comerciales e industriales. Realizamos reparación, instalación y mantenimiento de sistemas eléctricos con garantía y cumplimiento de normas de seguridad.'),
-(6, 'Carpinteria', ''),
-(7, 'Conductor', ''),
-(8, 'Repostería', ''),
-(9, 'Reparación de computadores', ''),
-(10, 'Organización de eventos', ''),
-(11, 'Entrenamiento personal', '');
+(5, 'Electricidad', 'Ofrecemos servicios eléctricos profesionales para instalaciones residenciales, comerciales e industriales. Realizamos reparación, instalación y mantenimiento de sistemas eléctricos con garantía y cumplimiento de normas de seguridad.');
 
 -- --------------------------------------------------------
 
@@ -101,16 +94,15 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id_usuario`, `nombre`, `apellido`, `celular`, `correo`, `nick`, `password`, `perfil`, `descripcion`, `creacion`) VALUES
 (1, 'Carlos', 'Ramirez', '3141234567', 'carlos.ramirez@mail.com', 'CarlosA', '12345', 'admin', '', '2025-10-09 03:16:50'),
-(2, 'Miguel', 'Gómez', '3128524121', 'Miguel.Angel@gmail.com', 'mig123', '1234', '0', 'Realiza instalaciones, reparaciones y mantenimiento de sistemas de agua y desagüe en hogares y empresas.', '2025-10-16 02:00:50'),
-(3, 'Juan ', 'Gonzales', '3021568641', 'juan.gonzales@hotmail.com', 'juango', '5678', '0', 'Se encarga de la seguridad de propiedades, control de accesos y monitoreo de actividades sospechosas.', '2025-10-16 02:02:02'),
-(4, 'Victor ', 'Herrera', '3131213421', 'victor.herrera@gmail.com', 'Victorlo', '8521', '0', 'Fabrica, repara y da mantenimiento a muebles, puertas y estructuras de madera.', '2025-10-16 02:02:57'),
-(5, 'Juan ', 'Villegas', '3242562312', 'Juan.Villegas@gmail.com', 'juavi', '4567', '0', 'Instala y repara sistemas eléctricos, realiza mantenimiento preventivo y atiende emergencias eléctricas.', '2025-10-16 02:03:27'),
-(6, 'Andres ', 'Perez', '3026589545', 'Andres.Perez@hotmail.com', 'andrp', '6547', '0', 'Ofrece servicios de transporte privado o empresarial, garantizando puntualidad y seguridad.', '2025-10-16 02:04:27'),
-(7, 'Sandra ', 'Aurelia', '3185462302', 'Sandra.Aurelia@hotmail.com', 'sandrue', '9874', '0', 'Limpia y mantiene espacios residenciales o comerciales, asegurando ambientes ordenados y saludables.', '2025-10-16 02:04:59'),
-(8, 'Camila', 'Restrepo', '3104567890', 'camila.restrepo@servicor.com ', 'camis', '3214', '0', 'Camila prepara y vende postres como brownies, galletas y tortas  por encargo.', '2025-10-16 02:06:18'),
-(9, 'Julián', 'Cifuentes', '3209876543', 'julian.cifuentes@techcol.com ', 'juliaci', '9823', '0', 'Julián ofrece mantenimiento y reparación de equipos, instalación de software y recuperación de datos.', '2025-10-16 02:06:56'),
-(10, 'Valeria', 'Montoya', '3001234567', 'valeria.montoya@eventosya.com ', 'valemonto', '6512', '0', 'Valeria coordina bodas, conferencias y eventos corporativos, desde la logística hasta la decoración.', '2025-10-16 02:07:27'),
-(11, 'Esteban', 'Quintero', '3157418520', 'esteban.quintero@fitzone.co', 'estebman', '7777', '0', 'Esteban diseña rutinas de ejercicio personalizadas y da seguimiento a metas de salud y bienestar.', '2025-10-16 02:09:55');
+(2, 'Juan', 'Jose', '3152345678', 'Juan.Jose@mail.com', 'Juan123', '9876', '0', '', '2025-10-16 01:08:12'),
+(3, 'Luis', 'Martínez', '3163456789', 'luis.martinez@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(4, 'María', 'Hernández', '3174567890', 'maria.hernandez@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(5, 'Jorge', 'Torres', '3185678901', 'jorge.torres@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(6, 'Laura', 'Pérez', '3196789012', 'laura.perez@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(7, 'Andrés', 'Castro', '3207890123', 'andres.castro@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(8, 'Sofía', 'Morales', '3218901234', 'sofia.morales@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(9, 'Diego', 'Fernández', '3229012345', 'diego.fernandez@mail.com', '', '', '0', '', '2025-10-03 08:56:28'),
+(10, 'Camila', 'Suárez', '3230123456', 'camila.suarez@mail.com', '', '', '0', '', '2025-10-03 08:56:28');
 
 --
 -- Índices para tablas volcadas
@@ -144,19 +136,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `inicio`
 --
 ALTER TABLE `inicio`
-  MODIFY `id_inicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_inicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `servicio`
 --
 ALTER TABLE `servicio`
-  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
