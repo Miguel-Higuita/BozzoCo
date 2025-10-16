@@ -16,16 +16,21 @@
 // }
 
 
-// cocexion para trabajar desde otro sitio
-function conectarDB() {
-    $db = mysqli_connect('localhost', 'root', '', 'bozzo');
+// conexion para trabajar desde otro sitio
 
-    if (!$db) {
-        echo "Error de conexión: ";
-        exit; // detiene la ejecución si no hay conexión
+
+if (!function_exists('conectarDB')) {
+    function conectarDB()
+    {
+        $db = mysqli_connect('localhost', 'root', '', 'bozzo');
+
+        if (!$db) {
+            echo "Error de conexión: ";
+            exit; // detiene la ejecución si no hay conexión
+        }
+
+        // echo "✅ Conexión exitosa a la BD"; // puedes dejarlo solo para pruebas
+
+        return $db;
     }
-
-    // echo "✅ Conexión exitosa a la BD"; // puedes dejarlo solo para pruebas
-
-    return $db;
 }

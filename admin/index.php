@@ -31,10 +31,6 @@ $resultadoConsulta = mysqli_query($db, $query);
 $mensaje = $_GET['resultado'] ?? null;
 
 
-// // Consultar para obtener los servicios
-// $consulta = "SELECT * FROM servicio ORDER BY nombre_servicio ASC";
-// $resultado = mysqli_query($db, $consulta);
-
 // Consultar para obtener los usuarios
 $query = "
     SELECT 
