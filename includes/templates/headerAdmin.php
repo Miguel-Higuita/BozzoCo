@@ -28,31 +28,27 @@ $auth  = $_SESSION['login'] ?? false;
   <link rel="stylesheet" href="../build/css/app.css" />
 </head>
 
-<body>
-  <header class="header">
-    <div class="contenedor contenido_header">
-      <nav class="navegacion-principal" id="nav">
-        <header class="header">
-    <div class="contenedor contenido-header">
-        <a href="index.php">
+      <header class="header">
+        <div class="contenedor contenido-header">
+          <a href="index.php">
             <h1>Bozzo</h1>
-        </a>
+          </a>
 
-        <!-- Botón Hamburguesa -->
-        <button class="menu-toggle" aria-label="Abrir menú">
+          <!-- Botón Hamburguesa -->
+          <button class="menu-toggle" aria-label="Abrir menú">
             <span class="linea"></span>
             <span class="linea"></span>
             <span class="linea"></span>
-        </button>
+          </button>
 
-        <nav class="navegacion-principal" id="nav">
-          <!-- <a href="#">Crear</a>-->
-          <a href="../index.php">Administración</a> 
-          <a href="../index.php">Pagina</a>
-          <?php  if ($auth):?>
-                <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
-            <?php  endif ?>
-          <!-- <a href="contacto.php">Contacto</a> -->
-        </nav>
-    </div>
-  </header>
+          <nav class="navegacion-principal" id="nav">
+            <!-- <a href="#">Crear</a>-->
+            <a href="../index.php">Administración</a>
+            <a href="../index.php">Pagina</a>
+            <?php if ($auth): ?>
+              <a href="../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
+            <?php endif ?>
+            <!-- <a href="contacto.php">Contacto</a> -->
+          </nav>
+        </div>
+      </header>

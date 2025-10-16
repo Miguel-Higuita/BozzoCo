@@ -16,12 +16,12 @@ if ($id <= 0) {
 $query = "SELECT 
             inicio.id_inicio,
             inicio.imagen,
+            inicio.descripcion,
             servicio.nombre_servicio,
             usuario.nombre,
             usuario.apellido,
             usuario.celular,
-            usuario.correo,
-            usuario.descripcion
+            usuario.correo
           FROM inicio
           JOIN servicio ON inicio.servicio = servicio.id_servicio
           JOIN usuario ON inicio.usuario = usuario.id_usuario
