@@ -12,8 +12,12 @@ $db = conectarDB();
 $query = "SELECT inicio.*, CONCAT(usuario.nombre, ' ', usuario.apellido) AS nombre_usuario, servicio.nombre_servicio 
             FROM inicio
             JOIN usuario ON inicio.usuario = usuario.id_usuario
-            JOIN servicio ON inicio.servicio = servicio.id_servicio
-            LIMIT $limite";
+            JOIN servicio ON inicio.servicio = servicio.id_servicio";
+
+// Si existe la variable $limite, agregar el LIMIT al final
+if (isset($limite) && is_numeric($limite)) {
+    $query .= " LIMIT $limite";
+}
 
 $resultado = mysqli_query($db, $query);
 ?>
