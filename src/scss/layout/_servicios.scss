@@ -51,6 +51,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 
+  position: sticky;   // ✅ se queda visible al hacer scroll
+  top: 11rem;          // distancia desde el borde superior
+
   @include m.tablet {
     width: 25rem;
   }

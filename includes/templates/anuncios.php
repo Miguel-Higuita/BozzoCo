@@ -12,7 +12,8 @@ $db = conectarDB();
 $query = "SELECT inicio.*, CONCAT(usuario.nombre, ' ', usuario.apellido) AS nombre_usuario, servicio.nombre_servicio 
             FROM inicio
             JOIN usuario ON inicio.usuario = usuario.id_usuario
-            JOIN servicio ON inicio.servicio = servicio.id_servicio";
+            JOIN servicio ON inicio.servicio = servicio.id_servicio
+            ORDER BY inicio.id_inicio DESC";
 
 // Si existe la variable $limite, agregar el LIMIT al final
 if (isset($limite) && is_numeric($limite)) {

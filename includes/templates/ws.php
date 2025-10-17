@@ -1,7 +1,7 @@
 
 
         <div class="mensajeria">
-            <a href="https://api.whatsapp.com/send?phone=3006425967 &text=Hola%20,%20Estoy%20Interesado%20por%20un%20trabajo,%20mi%20nombre%20es:%20" target="_blank">
+            <a href="https://api.whatsapp.com/send?phone=3006425967 &text=Hola%20BOZZo,%20Estoy%20Interesado%20por%20un%20trabajo,%20mi%20nombre%20es:%20" target="_blank">
                 <picture class="icon-wsp">
                     <source srcset="src/scss/img/logowhatsApp.avif" type="image/avif">
                     <source srcset="src/scss/img/logowhatsApp.webp" type="image/webp">
