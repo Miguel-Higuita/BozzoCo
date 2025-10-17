@@ -23,6 +23,8 @@ if (!function_exists('conectarDB')) {
     function conectarDB()
     {
         $db = mysqli_connect('localhost', 'root', '', 'bozzo');
+        mysqli_set_charset($db, 'utf8mb4');
+
 
         if (!$db) {
             echo "Error de conexión: ";

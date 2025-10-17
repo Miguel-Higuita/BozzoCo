@@ -34,9 +34,10 @@ $resultado = mysqli_query($db, $query);
             <?php if (mysqli_num_rows($resultado) > 0): ?>
                 <?php while ($anuncio = mysqli_fetch_assoc($resultado)): ?>
                     <div class="servicio1">
-                        <a href="adentro.php?id=<?php echo $anuncio['id_inicio']; ?>">
+                        <a href="<?php echo DIR_; ?>adentro.php?id=<?php echo $anuncio['id_inicio']; ?>">
+                        
                             <img class="servicio__imagen"
-                                src="imagenes/<?php echo htmlspecialchars($anuncio['imagen']); ?>"
+                                src="<?php echo DIR_; ?>imagenes/<?php echo $anuncio['imagen']; ?>"
                                 alt="Imagen del servicio <?php echo htmlspecialchars($anuncio['nombre_servicio']); ?>" />
                             <div class="servicio__informacion">
                                 <b>

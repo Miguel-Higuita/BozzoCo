@@ -1,18 +1,20 @@
 <?php
-file_put_contents(__DIR__ . '/../../imagenes/prueba.txt', '✅ PHP puede escribir aquí');
+
 
 require __DIR__ . '/../../includes/funciones.php';
 
 $auth = autenticado();
 
 if (!$auth) {
-    header('Location: /bozzoco/index.php');
+    header('Location: ' . DIR_ . 'index.php');
+    exit;
 }
 
 // importar conexion 
 require __DIR__ . '/../../includes/config/database.php';
 
 $db = conectarDB();
+mysqli_set_charset($db, "utf8mb4");
 
 // echo "<pre>";
 // var_dump($_POST);
@@ -59,9 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // exit;
 
-    echo "<pre>";
-    var_dump($_FILES);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($_FILES);
+    // echo "</pre>";
 
 
     $servicio = mysqli_real_escape_string($db,  $_POST['servicio']);
@@ -127,7 +129,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // mover la imagen
         if (!file_exists($imagen['tmp_name'])) {
-            die("❌ El archivo temporal ya no existe: " . $imagen['tmp_name']);
+            die(" El archivo temporal ya no existe: " . $imagen['tmp_name']);
         }
 
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
@@ -150,7 +152,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            header('Location: ../index.php?resultado=1');
+            header('Location: ' . DIR_ . 'admin/index.php?resultado=1');
+        exit;
         }
     }
 }
@@ -162,13 +165,14 @@ incluirTemplate('headerAnuncio');
 <main class="contenedor seccion">
     <h1 class="titulo1"> Crear Anuncios </h1>
 
-    <a href="../index.php" class="boton boton-verde">Volver</a>
+    <a href="<?php echo DIR_; ?>admin/index.php" class="boton boton-verde">Volver</a>
 
     <?php foreach ($errores as $error): ?>
         <div class="alerta error">
-            <?php echo $error; ?>
+           <div class="alerta error"><?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?>
         </div>
     <?php endforeach; ?>
+   
 
     <!-- Formulario para crear un anuncio -->
     <form class="formulario" method="post" action="crear.php" enctype="multipart/form-data">
@@ -182,7 +186,8 @@ incluirTemplate('headerAnuncio');
             <select name="servicio">
                 <option value="">----- Seleccione un servicio -----</option>
                 <?php while ($row =  mysqli_fetch_assoc($resultado)) : ?>
-                    <option <?php echo $servicio === $row['id_servicio'] ? 'selected' : ''; ?> value="<?php echo $row['id_servicio']; ?>"> <?php echo $row['nombre_servicio']; ?> </option>
+                     <option value="<?php echo $row['id_servicio']; ?>" <?php echo ($servicio == $row['id_servicio']) ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($row['nombre_servicio'], ENT_QUOTES, 'UTF-8'); ?>
                 <?php endwhile; ?>
             </select>
 
@@ -190,14 +195,15 @@ incluirTemplate('headerAnuncio');
 
             <select name="usuario">
                 <option value="">----- Seleccione un usuario -----</option>
-                <?php while ($row2 =  mysqli_fetch_assoc($resultado2)) : ?>
-                    <option <?php echo $usuario === $row2['id_usuario'] ? 'selected' : ''; ?> value="<?php echo $row2['id_usuario']; ?>"> <?php echo $row2['nombre'] . " " . $row2['apellido'] ?> </option>
+                <?php while ($row2 = mysqli_fetch_assoc($resultado2)): ?>
+                    <option value="<?php echo $row2['id_usuario']; ?>" <?php echo ($usuario == $row2['id_usuario']) ? 'selected' : ''; ?>>
+                        <?php echo htmlspecialchars($row2['nombre'] . " " . $row2['apellido'], ENT_QUOTES, 'UTF-8'); ?>
+                    </option>
                 <?php endwhile; ?>
             </select>
 
             <label for="descripcion">Descripción del servicio:</label>
-            <textarea id="descripcion" name="descripcion"></textarea>
-
+            <textarea id="descripcion" name="descripcion"><?php echo htmlspecialchars($descripcion, ENT_QUOTES, 'UTF-8'); ?></textarea>
         </fieldset>
 
 

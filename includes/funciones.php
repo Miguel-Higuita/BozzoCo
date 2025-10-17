@@ -19,4 +19,10 @@ function autenticado() : bool {
     return false;
 }
 
+
+// Ruta base del proyecto
+if (!defined('DIR_')) {
+    define('DIR_', '/'); // Ajusta la ruta según la carpeta real del proyecto
+}
+
 ?>

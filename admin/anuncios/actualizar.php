@@ -23,6 +23,7 @@ if (!$id) {
 require __DIR__ . '/../../includes/config/database.php';
 
 $db = conectarDB();
+mysqli_set_charset($db, "utf8mb4");
 
 // echo "<pre>";
 // var_dump($_GET);
@@ -120,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         /** SUBIDA DE ARCHIVOS */
 
         // Crear carpeta
-        $carpetaImagenes = '../../imagenes/';
+        $carpetaImagenes = __DIR__ . '/../../imagenes/';
 
         if (!is_dir($carpetaImagenes)) {
             mkdir($carpetaImagenes);
@@ -156,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $resultado = mysqli_query($db, $query);
 
         if ($resultado) {
-            header('Location: /BozzoCo/admin/index.php?resultado=2');
+            header('Location: ' . DIR_ . 'admin/index.php?resultado=2');
             exit;
         }
     }
@@ -198,7 +199,7 @@ incluirTemplate('headerAnuncio');
 <main class="contenedor seccion">
     <h1 class="titulo1"> Actualizar Anuncios </h1>
 
-    <a href="../index.php" class="boton boton-verde">Volver</a>
+    <a href="<?php echo DIR_; ?>admin/index.php" class="boton boton-verde">Volver</a>
 
     <?php foreach ($errores as $error): ?>
         <div class="alerta error">
@@ -213,7 +214,7 @@ incluirTemplate('headerAnuncio');
 
             <label for="imagen">Imagen:</label>
             <input type="file" id="imagen" accept="image/jpeg, image/png" name="imagen">
-            <img src="../../imagenes/<?php echo $imagen; ?>" class="imagen-small">
+            <img src="<?php echo DIR_; ?>imagenes/<?php echo $imagen; ?>" class="imagen-small">
 
             <label for="servicio">Servicio:</label>
             <select name="servicio">

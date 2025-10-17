@@ -1,4 +1,5 @@
 <?php
+require 'includes/funciones.php';
 require 'includes/config/database.php';
 $db = conectarDB();
 
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['usuario'] = $usuarioData['usuario'];
                     $_SESSION['login'] = true;
 
-                    header('Location: /BozzoCo/admin/index.php');
+                    header('Location: ' . DIR_ . 'admin/index.php');
                     exit;
                 } else {
                     $errores[] = 'El password es incorrecto.';
@@ -77,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // incluye  el header
 
-require 'includes/funciones.php';
+
 
 incluirTemplate('header');
 ?>

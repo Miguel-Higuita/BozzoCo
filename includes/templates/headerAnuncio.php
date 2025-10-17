@@ -12,7 +12,7 @@ $auth  = $_SESSION['login'] ?? false;
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@ $auth  = $_SESSION['login'] ?? false;
 
 <header class="header">
     <div class="contenedor contenido-header">
-        <a href="index.php">
+        <a href="<?php echo DIR_; ?>index.php">
             <h1>Bozzo</h1>
         </a>
 
@@ -43,13 +43,13 @@ $auth  = $_SESSION['login'] ?? false;
         </button>
 
         <nav class="navegacion-principal" id="nav">
-          <!-- <a href="#">Crear</a>-->
-          <a href="../index.php">Administración</a> 
-          <a href="../../index.php">Pagina</a>
-          <?php  if ($auth):?>
-                <a href="../../Cerrar_sesion.php" class="sesion">Cerrar sesion</a>
-            <?php  endif ?>
-          <!-- <a href="contacto.php">Contacto</a> -->
+            <!-- <a href="#">Crear</a>-->
+            <a href="<?php echo DIR_; ?>admin/index.php">Administración</a>
+            <a href="<?php echo DIR_; ?>index.php">Página</a>
+            <?php if ($auth): ?>
+                <a href="<?php echo DIR_; ?>Cerrar_sesion.php" class="sesion">Cerrar sesión</a>
+            <?php endif; ?>
+            <!-- <a href="<?php echo DIR_; ?>contacto.php">Contacto</a> -->
         </nav>
     </div>
 </header>

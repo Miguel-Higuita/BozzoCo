@@ -58,31 +58,35 @@ $resultadoConsulta = mysqli_query($db, $query);
 
 //Eliminar anuncio
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['id'];
-    $id = filter_var($id, FILTER_VALIDATE_INT);
+    $id = filter_var($_POST['id'], FILTER_VALIDATE_INT);
 
     if ($id) {
-
-        //Eliminar imagen
-        $query = "SELECT imagen FROM inicio WHERE id_inicio = $id ";
-
-        $resultado = mysqli_query($db, $query);
+        // Obtener nombre de la imagen
+        $stmt = mysqli_prepare($db, "SELECT imagen FROM inicio WHERE id_inicio = ?");
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        $resultado = mysqli_stmt_get_result($stmt);
         $anuncio = mysqli_fetch_assoc($resultado);
+        mysqli_stmt_close($stmt);
 
-        unlink('/../imagenes/' . $anuncio['imagen']);
+        // Eliminar imagen si existe
+        $rutaImagen = __DIR__ . '/../imagenes/' . $anuncio['imagen'];
+        if (file_exists($rutaImagen)) {
+            unlink($rutaImagen);
+        }
 
-
-        //Eliminar item
-        $query = "DELETE FROM inicio WHERE id_inicio = $id ";
-
-        $resultado = mysqli_query($db, $query);
+        // Eliminar registro en la base de datos
+        $stmt = mysqli_prepare($db, "DELETE FROM inicio WHERE id_inicio = ?");
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        $resultado = mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
 
         if ($resultado) {
             header('Location: /BozzoCo/admin/index.php?resultado=3');
+            exit;
         }
     }
 }
-
 // incluye en template
 
 incluirTemplate('headerAdmin');
